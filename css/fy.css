@@ -1,0 +1,182 @@
+/*1. 首页背景*/
+#web_bg {
+    /* 背景图像的地址（url括号里）  */
+    background: url(https://clubimg.club.vmall.com/data/attachment/forum/202004/07/182323b8aj1agp01ultju9.jpg);
+    /* 背景图像不重复 */
+    background-repeat: no-repeat;
+    /* 背景图像大小 */
+    background-size: cover;
+  }
+
+/*2. 文章页背景 */
+.layout > div:first-child:not(.recent-posts) {
+  /* 以下代表白色透明度为0.3 */
+  background: rgba(255, 255, 255, 0.3);
+}
+/*3. 所有背景（包括首页卡片、文章页、页面页等） */
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post {
+  /* 以下代表白色透明度为0.3 */
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 页脚透明 */
+#footer, #footer:before {
+  background: transparent!important
+}
+@font-face{
+  font-family: 'FZFW' ;  /* 自定义字体名称 */
+  src: url('font/YeZiGongChangTongNianYeQuTi-2'); /* 引入字体文件的路径 */
+}
+/*应用在body体里，放在第一个，font-family会按顺序使用字体族。如果第一个没找到就会找第二个，以此类推。*/
+body {
+font-family: FZFW,-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "STZhongsong", "Lantinghei SC", sans-serif
+}
+/* 鼠标样式 */
+body {
+  cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+      default;
+}
+/*链接小手样式*/
+a,
+img {
+  cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+      default;
+}
+/*导航栏居中*/
+#nav-right{
+	flex:1 1 auto;
+	justify-content: flex-end;
+	margin-left: auto;
+	display: flex;
+	flex-wrap:nowrap;
+}
+
+  /*  风车  */
+  
+ /* 文章页H1-H6图标样式效果 */
+/* 控制风车转动速度 4s那里可以自己调节快慢 */
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  -webkit-animation: ccc 1s linear infinite;
+  animation: ccc 1s linear infinite;
+}
+/* 控制风车转动方向 -1turn 为逆时针转动，1turn 为顺时针转动，相同数字部分记得统一修改 */
+@-webkit-keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes ccc {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+/* 设置风车颜色 */
+#content-inner.layout h1::before {
+  color: #ef50a8;
+  margin-left: -1.55rem;
+  font-size: 1.3rem;
+  margin-top: -0.23rem;
+}
+#content-inner.layout h2::before {
+  color: #fb7061;
+  margin-left: -1.35rem;
+  font-size: 1.1rem;
+  margin-top: -0.12rem;
+}
+#content-inner.layout h3::before {
+  color: #ffbf00;
+  margin-left: -1.22rem;
+  font-size: 0.95rem;
+  margin-top: -0.09rem;
+}
+#content-inner.layout h4::before {
+  color: #a9e000;
+  margin-left: -1.05rem;
+  font-size: 0.8rem;
+  margin-top: -0.09rem;
+}
+#content-inner.layout h5::before {
+  color: #57c850;
+  margin-left: -0.9rem;
+  font-size: 0.7rem;
+  margin-top: 0rem;
+}
+#content-inner.layout h6::before {
+  color: #5ec1e0;
+  margin-left: -0.9rem;
+  font-size: 0.66rem;
+  margin-top: 0rem;
+}
+/* s设置风车hover动效 6s那里可以自己调节快慢*/
+#content-inner.layout h1:hover,
+#content-inner.layout h2:hover,
+#content-inner.layout h3:hover,
+#content-inner.layout h4:hover,
+#content-inner.layout h5:hover,
+#content-inner.layout h6:hover {
+  color: var(--theme-color);
+}
+#content-inner.layout h1:hover::before,
+#content-inner.layout h2:hover::before,
+#content-inner.layout h3:hover::before,
+#content-inner.layout h4:hover::before,
+#content-inner.layout h5:hover::before,
+#content-inner.layout h6:hover::before {
+  color: var(--theme-color);
+  -webkit-animation: ccc 1s linear infinite;
+  animation: ccc 1s linear infinite;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(73, 177, 245, 0.2);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #49b1f5;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.4) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #49b1f5;
+}
